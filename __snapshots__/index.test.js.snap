@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders nested next/dynamic components 1`] = `
+<div>
+  <p>
+    Nested dynamic loaded component:
+  </p>
+  <div>
+    <p>
+      Dynamic loaded component:
+    </p>
+    <h1>
+      Leaf component says: 
+      Loaded with next/dynamic!
+    </h1>
+  </div>
+</div>
+`;
