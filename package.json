@@ -1,8 +1,11 @@
 {
   "name": "jest-next-dynamic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "jest"
   },
