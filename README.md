@@ -27,7 +27,7 @@ Both of these work fine:
 
 ```json
 {
-  "plugins": ["babel-plugin-dynamic-import-node]"]
+  "plugins": ["babel-plugin-dynamic-import-node"]
 }
 ```
 
