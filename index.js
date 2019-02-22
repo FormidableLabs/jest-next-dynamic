@@ -15,23 +15,37 @@ module.exports = function preloadAll() {
   }
 };
 
-jest.doMock(
-  "next/dynamic",
-  () => {
-    const { default: dynamic } = jest.requireActual("next/dynamic");
+function createFactory(moduleName) {
+  return () => {
+    const dynamicModule = jest.requireActual(moduleName);
+    const dynamic = dynamicModule.default;
 
-    const mockDynamic = (...args) => {
-      const LoadableComponent = dynamic(...args);
+    const mockDynamic = (loader, options) => {
+      // Remove webpack-specific functionality added by the next/babel preset.
+      if (loader && typeof loader === "object" && loader.loadableGenerated) {
+        const { loadableGenerated, ...mockLoader } = loader;
+        loader = mockLoader;
+      }
+      if (options && typeof options === "object" && options.loadableGenerated) {
+        const { loadableGenerated, ...mockOptions } = options;
+        options = mockOptions;
+      }
+      const LoadableComponent = dynamic(loader, options);
       mockInitializers.push(() => LoadableComponent.preload());
       return LoadableComponent;
     };
 
-    return mockDynamic;
-  },
-  // In order to more easily include this feature in shared Jest setups (like
-  // presets), use `virtual: true` to avoid throwing an error when `next` isn't
-  // actually installed.
-  {
-    virtual: true
-  }
-);
+    // Replace the `default` export on the existing module so that other exports
+    // and non-enumerable properties remain.
+    dynamicModule.default = mockDynamic;
+    return dynamicModule;
+  };
+}
+
+// In order to more easily include this feature in shared Jest setups (like
+// presets), use `virtual: true` to avoid throwing an error when `next` isn't
+// actually installed or it's a version without `next-server` (introduced in
+// Next.js 8).
+for (const moduleName of ["next/dynamic", "next-server/dynamic"]) {
+  jest.doMock(moduleName, createFactory(moduleName), { virtual: true });
+}
