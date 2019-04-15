@@ -1,3 +1,5 @@
+[![Maintenance Status][maintenance-image]](#maintenance-status)
+
 # jest-next-dynamic
 
 Unlike [react-loadable](https://github.com/jamiebuilds/react-loadable), the
@@ -47,3 +49,9 @@ beforeAll(async () => {
 
 // Your tests here!
 ```
+## Maintenance Status
+
+**Experimental:** This project is quite new. We're not sure what our ongoing maintenance plan for this project will be. Bug reports, feature requests and pull requests are welcome. If you like this project, let us know!
+
+[maintenance-image]: https://img.shields.io/badge/maintenance-experimental-blueviolet.svg
+
