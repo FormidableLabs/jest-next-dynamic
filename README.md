@@ -18,6 +18,10 @@ component tree instead of the loading placeholders.
 
 ## Setup
 
+### Next.js >= 8.0.4
+As of Next.js 8.0.4, `babel-plugin-dynamic-import-node` is shipped with Next.js, so `import()` is transformed in Jest's environment. The only setup step required is to make sure you run your tests with `NODE_ENV=test`. 
+
+### Next.js < 8.0.4
 In order to transform `import()` successfully in Jest’s environment, you must
 use a different transform than the one provided by `next/babel` (which expects
 to be built with webpack).
@@ -49,6 +53,7 @@ beforeAll(async () => {
 
 // Your tests here!
 ```
+
 ## Maintenance Status
 
 **Experimental:** This project is quite new. We're not sure what our ongoing maintenance plan for this project will be. Bug reports, feature requests and pull requests are welcome. If you like this project, let us know!
