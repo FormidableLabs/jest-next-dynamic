@@ -31,7 +31,10 @@ function createFactory(moduleName) {
         options = mockOptions;
       }
       const LoadableComponent = dynamic(loader, options);
-      mockInitializers.push(() => LoadableComponent.render.preload());
+      mockInitializers.push(() =>
+        LoadableComponent.preload
+          ? LoadableComponent.preload()
+          : LoadableComponent.render.preload()
       return LoadableComponent;
     };
 
