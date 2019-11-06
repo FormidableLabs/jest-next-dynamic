@@ -34,7 +34,7 @@ function createFactory(moduleName) {
       mockInitializers.push(() =>
         LoadableComponent.preload
           ? LoadableComponent.preload()
-          : LoadableComponent.render.preload()
+          : LoadableComponent.render.preload());
       return LoadableComponent;
     };
 
