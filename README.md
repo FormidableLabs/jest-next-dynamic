@@ -1,6 +1,6 @@
-[![Maintenance Status][maintenance-image]](#maintenance-status)
+[![jest-next-dynamic — Formidable, We build the modern web](./jest-next-dynamic-Hero.png)](https://formidable.com/open-source/)
 
-# jest-next-dynamic
+[![Maintenance Status][maintenance-image]](#maintenance-status)
 
 Unlike [react-loadable](https://github.com/jamiebuilds/react-loadable), the
 [dynamic import](https://github.com/zeit/next.js#dynamic-import) support
