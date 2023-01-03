@@ -1,4 +1,4 @@
-[![jest-next-dynamic — Formidable, We build the modern web](./jest-next-dynamic-Hero.png)](https://formidable.com/open-source/)
+[![jest-next-dynamic — Formidable, We build the modern web](https://raw.githubusercontent.com/FormidableLabs/jest-next-dynamic/master/jest-next-dynamic-Hero.png)](https://formidable.com/open-source/)
 
 [![Maintenance Status][maintenance-image]](#maintenance-status)
 
