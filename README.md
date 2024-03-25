@@ -19,7 +19,7 @@ component tree instead of the loading placeholders.
 ## Setup
 
 In order to transform `import()` successfully in Jest’s environment, you must
-use a different transform than the one provided by `next/babel` (which expects
+use a different transform* than the one provided by `next/babel` (which expects
 to be built with webpack).
 
 Both of these work fine:
@@ -32,6 +32,8 @@ Both of these work fine:
   "plugins": ["babel-plugin-dynamic-import-node"]
 }
 ```
+
+\* This does not apply to Next.js version 8, which does not need the Babel plugin.
 
 ## Usage
 
