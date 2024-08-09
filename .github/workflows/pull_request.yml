@@ -2,28 +2,23 @@ name: Pull Request
 
 on:
   pull_request:
-  push:
-    branches: [master]
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
 
-  pull_request:
-    name: Pull Request
-    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node.js
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          cache: "yarn"
           node-version: 18
+          cache: 'yarn'
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Unit Tests
-        run: yarn test
+      
+      - name: Test
+        run: yarn run test
