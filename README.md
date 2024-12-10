@@ -1,4 +1,6 @@
-[![jest-next-dynamic — Formidable, We build the modern web](https://raw.githubusercontent.com/FormidableLabs/jest-next-dynamic/master/jest-next-dynamic-Hero.png)](https://formidable.com/open-source/)
+<a href="https://commerce.nearform.com/open-source/" target="_blank">
+  <img alt="Jest-Next-Dynamic" src="https://oss.nearform.com/api/banner.svg?text=jest-next-dynamic" />
+</a>
 
 [![Maintenance Status][maintenance-image]](#maintenance-status)
 
@@ -49,9 +51,14 @@ beforeAll(async () => {
 
 // Your tests here!
 ```
+
+## 🤝 Contributing
+
+Please see our [Contributing](./CONTRIBUTING.md) guide.
+
 ## Maintenance Status
 
-**Experimental:** This project is quite new. We're not sure what our ongoing maintenance plan for this project will be. Bug reports, feature requests and pull requests are welcome. If you like this project, let us know!
+**Active:** NearForm (Previously Formidable) is actively working on this project, and we expect to continue work on this project for the foreseeable future. Bug reports, feature requests and pull requests are welcome.
 
-[maintenance-image]: https://img.shields.io/badge/maintenance-experimental-blueviolet.svg
+[maintenance-image]: https://img.shields.io/badge/maintenance-active-green.svg?color=brightgreen&style=flat
 
