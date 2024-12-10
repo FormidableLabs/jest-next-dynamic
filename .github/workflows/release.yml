@@ -3,7 +3,7 @@ name: Jest Next Dynamic Release Workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   release:
@@ -24,15 +24,15 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Build packages
-        run: pnpm run build
+      - name: Test packages
+        run: yarn test
 
       - name: PR or Publish
         id: changesets
         uses: changesets/action@v1
         with:
-          version: pnpm run version
-          publish: pnpm changeset publish
+          version: yarn version
+          publish: yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.CHANGESETS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

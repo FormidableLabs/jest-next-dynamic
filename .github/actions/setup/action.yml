@@ -8,16 +8,12 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: pnpm/action-setup@v3
-      with:
-        version: 7
-
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         node-version: ${{ inputs.node-version }}
-        cache: 'pnpm'
+        cache: 'yarn'
 
     - name: Install dependencies
       shell: bash
-      run: pnpm install
+      run: yarn install
