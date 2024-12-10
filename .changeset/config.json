@@ -6,11 +6,6 @@
       "repo": "FormidableLabs/jest-next-dynamic"
     }
   ],
-  "commit": false,
-  "fixed": [],
-  "linked": [],
   "access": "public",
-  "baseBranch": "master",
-  "updateInternalDependencies": "patch",
-  "ignore": []
+  "baseBranch": "master"
 }

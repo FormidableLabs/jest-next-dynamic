@@ -1,4 +1,4 @@
-name: Jest Next Dynamic Release Workflow
+name: Release Workflow
 
 on:
   push:
