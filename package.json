@@ -9,11 +9,14 @@
     "index.d.ts"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "version": "yarn changeset version && yarn install --no-frozen-lockfile",
+    "changeset": "changeset"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/runtime": "^7.26.0",
+    "@changesets/cli": "^2.27.10",
     "babel-jest": "^29.7.0",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "jest": "^29.7.0",

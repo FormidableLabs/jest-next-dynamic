@@ -1,0 +1,38 @@
+name: Jest Next Dynamic Release Workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+      repository-projects: write
+      deployments: write
+      packages: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.CHANGESETS_TOKEN }}
+
+      - uses: ./.github/actions/setup
+
+      - name: Test packages
+        run: yarn test
+
+      - name: PR or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          version: yarn version
+          publish: yarn changeset publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.CHANGESETS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
